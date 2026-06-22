@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="170" viewBox="0 0 760 170" font-family="Arial, Helvetica, sans-serif">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<g>
+<rect x="8" y="55" width="150" height="60" rx="7" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.8"/>
+<text x="83" y="80" text-anchor="middle" font-size="14" font-weight="600" fill="#0C447C">1. Validate</text>
+<text x="83" y="98" text-anchor="middle" font-size="11" fill="#185FA5">schema gate</text>
+</g>
+<line x1="158" y1="85" x2="196" y2="85" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#a)"/>
+<g>
+<rect x="198" y="55" width="150" height="60" rx="7" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.8"/>
+<text x="273" y="80" text-anchor="middle" font-size="14" font-weight="600" fill="#085041">2. Compute</text>
+<text x="273" y="98" text-anchor="middle" font-size="11" fill="#0F6E56">3 dimensions</text>
+</g>
+<line x1="348" y1="85" x2="386" y2="85" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#a)"/>
+<g>
+<rect x="388" y="55" width="150" height="60" rx="7" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.8"/>
+<text x="463" y="80" text-anchor="middle" font-size="14" font-weight="600" fill="#633806">3. Evaluate</text>
+<text x="463" y="98" text-anchor="middle" font-size="11" fill="#854F0B">vs thresholds</text>
+</g>
+<line x1="538" y1="85" x2="576" y2="85" stroke="#5F5E5A" stroke-width="1.6" marker-end="url(#a)"/>
+<g>
+<rect x="578" y="55" width="150" height="60" rx="7" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.8"/>
+<text x="653" y="80" text-anchor="middle" font-size="14" font-weight="600" fill="#27500A">4. Report</text>
+<text x="653" y="98" text-anchor="middle" font-size="11" fill="#3B6D11">alert + exit code</text>
+</g>
+</svg>

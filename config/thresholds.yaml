@@ -1,0 +1,76 @@
+# RAI Tracker — monitoring thresholds.
+#
+# These are launch defaults; calibrate against a baseline window and the
+# department's documented risk appetite before relying on them. Governance can
+# edit this file without any code change or redeployment.
+#
+# direction:
+#   higher_is_worse — alert as the value rises (drift, disparity, error rate)
+#   lower_is_worse  — alert as the value falls (completeness, join rate, confidence)
+
+settings:
+  reference_group: null        # null => largest eligible group is the baseline
+  min_group_size: 30           # groups below this are not scored
+  expected_daily_volume: 2000
+
+thresholds:
+  # ---- Fairness ----
+  fairness.demographic_parity_diff:
+    amber: 0.05
+    red: 0.10
+    direction: higher_is_worse
+    description: "Gap in 'urgent' selection rate vs reference group."
+  fairness.tpr_gap:
+    amber: 0.05
+    red: 0.10
+    direction: higher_is_worse
+    description: "Equal-opportunity gap in true-positive rate across groups."
+  fairness.calibration_gap:
+    amber: 0.03
+    red: 0.05
+    direction: higher_is_worse
+    description: "Difference in expected calibration error across groups."
+
+  # ---- Robustness ----
+  robustness.prediction_drift_psi:
+    amber: 0.10
+    red: 0.25
+    direction: higher_is_worse
+    description: "PSI on the predicted priority-class mix vs baseline."
+  robustness.feature_drift_psi:
+    amber: 0.10
+    red: 0.25
+    direction: higher_is_worse
+    description: "PSI on an input metadata feature vs baseline."
+  robustness.low_confidence_rate:
+    amber: 0.20
+    red: 0.35
+    direction: higher_is_worse
+    description: "Share of predictions below 0.50 confidence."
+  robustness.mean_confidence:
+    amber: 0.70
+    red: 0.60
+    direction: lower_is_worse
+    description: "Mean prediction confidence."
+  robustness.volume_deviation:
+    amber: 0.20
+    red: 0.30
+    direction: higher_is_worse
+    description: "Relative deviation from expected daily volume."
+  robustness.error_rate:
+    amber: 0.005
+    red: 0.01
+    direction: higher_is_worse
+    description: "Fraction of malformed / missing predictions."
+
+  # ---- Transparency ----
+  transparency.logging_completeness:
+    amber: 0.995
+    red: 0.99
+    direction: lower_is_worse
+    description: "Share of required fields populated."
+  transparency.join_integrity:
+    amber: 0.995
+    red: 0.99
+    direction: lower_is_worse
+    description: "Share of logs that join to a demographic record."

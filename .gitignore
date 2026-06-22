@@ -1,0 +1,19 @@
+cat > .gitignore << EOF
+__pycache__/
+*.pyc
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+.venv/
+trackerenv/
+*.egg-info/
+logs.csv
+demographics.csv
+report.json
+EOF
