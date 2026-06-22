@@ -16,4 +16,4 @@ trackerenv/
 logs.csv
 demographics.csv
 report.json
-EOF
+EOF.DS_Store
