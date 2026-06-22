@@ -1,4 +1,4 @@
-# RAI Tracker
+# MonitorAI
 
 Responsible-AI monitoring for a government request-triage classifier.
 
